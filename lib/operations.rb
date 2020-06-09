@@ -1,12 +1,17 @@
-require 'pry'
+
 def unsafe?(speed)
-!(40,60).include?(speed)
+if speed > 60
+true 
+elsif speed < 40
+true
+else 
+  speed = 50
+  false
+end 
 end
 
-binding.pry
-
 def not_safe?(speed)
-  speed < 40 || speed ? true : false 
+  speed > 60 || speed < 40 ? true : false 
 	
 end
 	
